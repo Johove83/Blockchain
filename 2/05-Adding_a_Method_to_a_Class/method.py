@@ -56,6 +56,6 @@ new_counter = Counter()
 # Update the count by calling update_count
 new_counter.update_count()
 new_counter.update_count()
-
+new_counter.update_count()
 # Print the updated value of count
 print("The current count is: ", new_counter.count)

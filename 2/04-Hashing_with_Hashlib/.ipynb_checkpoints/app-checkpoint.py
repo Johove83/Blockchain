@@ -28,25 +28,25 @@ import streamlit as st
 
 # @TODO:
 # Define a function called `hash_data` that takes in a parameter called `data`
-hash_data = 'data'
+def hash_data(X):
 
 # @TODO:
 # Instantiate an instance of hashlib's `sha256` function
-sha =  hashlib.sha256()
+    sha =  hashlib.sha256()
 
 # @TODO:
 # Use the `encode` function to encode the string version of the data that
 # was passed in as a parameter to the function
-encoded_data = hash_data.encode()
+    encoded_data = str(X).encode()
 
 # @TODO:
 # Call the hashing instance and the `update` function. Pass it the encoded
 # data as a parameter
-sha.update(encoded_data)
+    sha.update(encoded_data)
 
 # @TODO:
 # Return the unique hash of the data using the `hexdigest` function
-print(sha.hexdigest())
+    return sha.hexdigest()
 
 ################################################################################
 # Streamlit Code
@@ -78,19 +78,18 @@ st.write(len(input_data))
 
 # @TODO:
 # Add a Streamlit `button` named “Hash Text”
-st.button('Hash Text')
+if st.button('Hash Text'):
 
 # @TODO:
 # Generate a hash of the user input using the `hash_data` function
-input_hash = hash_data.hash_block()
+    input_hash = hash_data(input_data)
 
 # @TODO:
 # Use the Streamlit `write` function to display the unique hash of the data
-output_hash = st.write(input_hash)
-
+    st.write(f'Output Hash (fingerprint): {input_hash}')
 # @TODO:
 # Use the Streamlit `write` function to display the length of the output hash.
-st.write(len(output_hash))
+    st.write(f'Output Hash : {len(input_hash)}')
 ################################################################################
 # Step 4:
 # Test the application.

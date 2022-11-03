@@ -33,7 +33,7 @@ import hashlib
 @dataclass
 class Block:
     data: Any
-    creator_id: int
+    creator_id: int 
     timestamp: str = datetime.utcnow().strftime("%H:%M:%S")
 
     # @TODO:
