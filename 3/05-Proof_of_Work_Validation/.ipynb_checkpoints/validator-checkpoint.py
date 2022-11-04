@@ -19,7 +19,7 @@ class Block:
         sha.update(data)
 
         creator_id = str(self.creator_id).encode()
-        sha.update(data)
+        sha.update(creator_id)
 
         prev_hash = str(self.prev_hash).encode()
         sha.update(prev_hash)
@@ -50,7 +50,7 @@ class PyChain:
 
             calculated_hash = block.hash_block()
 
-        print("Wining Hash", calculated_hash)
+        print("Winning Hash", calculated_hash)
         return block
 
     def add_block(self, candidate_block):
