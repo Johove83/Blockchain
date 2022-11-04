@@ -62,7 +62,7 @@ class PyChain:
 
             calculated_hash = block.hash_block()
 
-        print("Wining Hash", calculated_hash)
+        print("Winning Hash", calculated_hash)
         return block
 
     def add_block(self, candidate_block):
@@ -161,17 +161,18 @@ st.write(pychain_df)
 
 # @TODO:
 # Add a button with the text “Validate Blockchain” to your Streamlit interface.
-button = st.button('Validate Blockchain',on_click = pychain.is_valid)
+if st.button('Validate Blockchain'):
 
 # Step 3:
 # Code the Validate Blockchain button so that when it’s clicked, it calls
 # the `is_valid` method of the `PyChain` data class and then writes the
 # result to the webpage.
+    
 
 # @TODO:
 # Call the `is_valid` method of the `PyChain` data class and `write` the
 # result to the Streamlit interface
-
+    st.write(pychain.is_valid())
 
 ################################################################################
 # Step 4:
